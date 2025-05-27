@@ -1,0 +1,26 @@
+/* Applying consistent colors and background visuals */
+
+/* Body styling */
+body {
+    background-color: #f0f0f0; /* Fallback color */
+    background-image: url('city-council-branding.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #333333; /* Text color */
+}
+
+/* Section headers with gradient */
+section h1 {
+    background: linear-gradient(90deg, #0044cc, #00ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Example text styling with RGBA */
+p {
+    color: rgba(51, 51, 51, 0.8); /* Slightly transparent text */
+    font-size: 1rem;
+    line-height: 1.5;
+}

@@ -1,0 +1,37 @@
+/* Styling links with pseudo-classes */
+a:link {
+    color: #1a73e8; /* Default link color */
+    text-decoration: none;
+}
+
+a:visited {
+    color: #6a1b9a; /* Visited link color */
+}
+
+a:hover {
+    color: #ff5722; /* Hover link color */
+    text-decoration: underline;
+}
+
+a:active {
+    color: #d32f2f; /* Active link color */
+}
+
+/* Customizing lists */
+ul, ol {
+    list-style-type: square; /* Change bullet style */
+    list-style-position: inside; /* Bullets inside the content */
+    padding: 10px;
+    margin: 15px 0;
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullets from nav menus */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 5px 10px; /* Add padding for spacing */
+    margin: 5px 0; /* Add margin for spacing */
+}

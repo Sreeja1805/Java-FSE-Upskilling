@@ -1,0 +1,54 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap');
+
+/* General styles for the body */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+/* Section styles */
+section {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    text-align: justify;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+    margin: 20px;
+}
+
+/* Highlighted text */
+.highlight {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #007BFF;
+}
+
+/* Footer styles */
+footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 40px;
+    color: #666;
+}

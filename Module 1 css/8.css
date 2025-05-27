@@ -1,0 +1,20 @@
+/* Styling for .eventCard */
+.eventCard {
+    margin: 20px; /* Adds space outside the element */
+    padding: 15px; /* Adds space inside the element */
+    border: 2px solid #ccc; /* Adds a border around the element */
+}
+
+/* Highlight selected fields in a form */
+form input:focus, form select:focus, form textarea:focus {
+    outline: 2px solid #007BFF; /* Adds an outline to highlight the field */
+}
+
+/* Example for visibility: hidden vs. display: none */
+.hiddenElement {
+    visibility: hidden; /* Element is invisible but still takes up space */
+}
+
+.noneElement {
+    display: none; /* Element is removed from the layout flow */
+}
