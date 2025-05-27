@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration</title>
+    <style>
+        .event { margin-bottom: 10px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1>Events</h1>
+    <label for="categoryFilter">Filter by category:</label>
+    <select id="categoryFilter">
+        <option value="all">All</option>
+        <option value="music">Music</option>
+        <option value="sports">Sports</option>
+        <option value="tech">Tech</option>
+    </select>
+
+    <input type="text" id="searchInput" placeholder="Search by name..." />
+
+    <div id="eventsList">
+        <!-- Events will be rendered here -->
+    </div>
+
+    <script>
+        // Sample events data
+        const events = [
+            { id: 1, name: "Rock Concert", category: "music" },
+            { id: 2, name: "Football Match", category: "sports" },
+            { id: 3, name: "Tech Conference", category: "tech" },
+            { id: 4, name: "Jazz Night", category: "music" },
+            { id: 5, name: "Basketball Game", category: "sports" }
+        ];
+
+        const eventsList = document.getElementById('eventsList');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const searchInput = document.getElementById('searchInput');
+
+        function renderEvents() {
+            const category = categoryFilter.value;
+            const search = searchInput.value.toLowerCase();
+            eventsList.innerHTML = '';
+            events
+                .filter(event => (category === 'all' || event.category === category))
+                .filter(event => event.name.toLowerCase().includes(search))
+                .forEach(event => {
+                    const div = document.createElement('div');
+                    div.className = 'event';
+                    div.innerHTML = `
+                        <span>${event.name} (${event.category})</span>
+                        <button onclick="registerEvent(${event.id})">Register</button>
+                    `;
+                    eventsList.appendChild(div);
+                });
+        }
+
+        // Register button handler
+        window.registerEvent = function(eventId) {
+            const event = events.find(e => e.id === eventId);
+            alert(`Registered for: ${event.name}`);
+        };
+
+        // Filter by category
+        categoryFilter.onchange = renderEvents;
+
+        // Quick search by name
+        searchInput.addEventListener('keydown', function(e) {
+            // Optional: Only filter on Enter, or filter on every keydown
+            // Here, filter on every keydown for instant feedback
+            setTimeout(renderEvents, 0); // Wait for input value to update
+        });
+
+        // Initial render
+        renderEvents();
+    </script>
+</body>
+</html>

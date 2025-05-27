@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Registration Form</title>
+    <style>
+        .error { color: red; font-size: 0.9em; }
+        .form-group { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <form id="registrationForm" novalidate>
+        <div class="form-group">
+            <label>Name: <input type="text" name="name"></label>
+            <span class="error" id="nameError"></span>
+        </div>
+        <div class="form-group">
+            <label>Email: <input type="email" name="email"></label>
+            <span class="error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+            <label>Event:
+                <select name="event">
+                    <option value="">Select an event</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="seminar">Seminar</option>
+                    <option value="webinar">Webinar</option>
+                </select>
+            </label>
+            <span class="error" id="eventError"></span>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const eventError = document.getElementById('eventError');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Clear previous errors
+            nameError.textContent = '';
+            emailError.textContent = '';
+            eventError.textContent = '';
+
+            const { name, email, event: eventSelect } = form.elements;
+            let valid = true;
+
+            // Name validation
+            if (!name.value.trim()) {
+                nameError.textContent = 'Name is required.';
+                valid = false;
+            }
+
+            // Email validation
+            if (!email.value.trim()) {
+                emailError.textContent = 'Email is required.';
+                valid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                emailError.textContent = 'Enter a valid email.';
+                valid = false;
+            }
+
+            // Event selection validation
+            if (!eventSelect.value) {
+                eventError.textContent = 'Please select an event.';
+                valid = false;
+            }
+
+            if (valid) {
+                alert('Registration successful!');
+                form.reset();
+            }
+        });

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery DOM Tasks</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .event-card {
+            display: none;
+            width: 200px;
+            padding: 20px;
+            background: #f0f0f0;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <button id="registerBtn">Show Event Card</button>
+    <button id="hideBtn">Hide Event Card</button>
+    <div class="event-card" id="eventCard">
+        <h3>Event Title</h3>
+        <p>Event details go here.</p>
+    </div>
+
+    <script>
+        // Handle click event using jQuery
+        $('#registerBtn').click(function() {
+            $('#eventCard').fadeIn();
+        });
+
+        $('#hideBtn').click(function() {
+            $('#eventCard').fadeOut();
+        });
+    </script>
+
+    <!--
+        Benefit of moving to frameworks like React or Vue:
+        They provide better structure for building complex, interactive UIs by managing state and UI updates efficiently.
+    -->
+</body>
+</html>
