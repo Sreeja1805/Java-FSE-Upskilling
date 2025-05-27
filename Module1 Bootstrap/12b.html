@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .pricing-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .pricing-header {
+            margin-bottom: 30px;
+        }
+        .pricing-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .pricing-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .pricing-cards {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .pricing-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .pricing-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .pricing-card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .pricing-card .price {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .pricing-card button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .pricing-card button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <section class="pricing-section">
+        <div class="pricing-header">
+            <h1>Our Pricing Plans</h1>
+            <p>Choose a plan that fits your needs</p>
+        </div>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h2>Basic</h2>
+                <p>Perfect for individuals</p>
+                <div class="price">$10/month</div>
+                <button>Get Started</button>
+            </div>
+            <div class="pricing-card">
+                <h2>Standard</h2>
+                <p>Great for small teams</p>
+                <div class="price">$30/month</div>
+                <button>Get Started</button>
+            </div>
+            <div class="pricing-card">
+                <h2>Premium</h2>
+                <p>Ideal for large organizations</p>
+                <div class="price">$50/month</div>
+                <button>Get Started</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

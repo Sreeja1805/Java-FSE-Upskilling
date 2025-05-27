@@ -1,0 +1,35 @@
+# Step 1: Initialize a new npm project
+npm init -y
+
+# Step 2: Install Bootstrap and Sass
+npm install bootstrap sass
+
+# Step 3: Create a folder structure
+mkdir scss css js
+
+# Step 4: Create a custom SCSS file
+echo '@import "../node_modules/bootstrap/scss/bootstrap";' > scss/styles.scss
+
+# Step 5: Add a script to compile Sass in package.json
+# Open package.json and add the following under "scripts":
+# "scripts": {
+#   "build-sass": "sass scss/styles.scss css/styles.css"
+# }
+
+# Step 6: Compile the Sass file
+npm run build-sass
+
+# Step 7: Create an HTML file
+echo '<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 with Sass</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Hello, Bootstrap 5 with Sass!</h1>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>' > index.html

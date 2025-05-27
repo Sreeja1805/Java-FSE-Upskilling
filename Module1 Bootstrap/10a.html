@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+        .navbar .logo {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar .nav-links li {
+            margin: 0 10px;
+        }
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar .search-form {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .search-form input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+        .navbar .search-form button {
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .navbar .search-form button:hover {
+            background-color: #777;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .navbar .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar .nav-links li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">MyLogo</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <form class="search-form">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+</body>
+</html>

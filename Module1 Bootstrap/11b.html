@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Object Layout</title>
+    <style>
+        .media {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .media img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .media-content {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="media">
+        <img src="example.jpg" alt="Example Image">
+        <div class="media-content">
+            <h2>Media Object Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+        </div>
+    </div>
+</body>
+</html>
