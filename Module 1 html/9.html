@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Nearby Events</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        #output { margin-top: 1em; }
+        button { padding: 0.5em 1em; font-size: 1em; }
+    </style>
+</head>
+<body>
+    <button id="findBtn">Find Nearby Events</button>
+    <div id="output"></div>
+
+    <script>
+        document.getElementById('findBtn').addEventListener('click', function() {
+            const output = document.getElementById('output');
+            output.textContent = "Locating...";
+
+            if (!navigator.geolocation) {
+                output.textContent = "Geolocation is not supported by your browser.";
+                return;
+            }
+
+            const options = {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 0
+            };
+
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    output.innerHTML = `<strong>Your Coordinates:</strong><br>Latitude: ${lat}<br>Longitude: ${lon}`;
+                },
+                function(error) {
+                    switch(error.code) {
+                        case error.PERMISSION_DENIED:
+                            output.textContent = "Permission denied. Please allow location access.";
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            output.textContent = "Location information is unavailable.";
+                            break;
+                        case error.TIMEOUT:
+                            output.textContent = "Location request timed out. Try again.";
+                            break;
+                        default:
+                            output.textContent = "An unknown error occurred.";
+                    }
+                },
+                options
+            );
+        });
+    </script>
+</body>
+</html>

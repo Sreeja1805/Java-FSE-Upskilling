@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Type Preference</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const select = document.getElementById('eventType');
+            const clearBtn = document.getElementById('clearPrefs');
+
+            // Pre-select from localStorage if available
+            const savedType = localStorage.getItem('preferredEventType');
+            if (savedType) {
+                select.value = savedType;
+            }
+
+            // Save selection to localStorage on change
+            select.addEventListener('change', function() {
+                localStorage.setItem('preferredEventType', select.value);
+            });
+
+            // Clear both storages on button click
+            clearBtn.addEventListener('click', function() {
+                localStorage.removeItem('preferredEventType');
+                sessionStorage.clear();
+                select.selectedIndex = 0; // Reset selection
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Select Your Preferred Event Type</h2>
+    <select id="eventType">
+        <option value="">-- Select Event Type --</option>
+        <option value="conference">Conference</option>
+        <option value="workshop">Workshop</option>
+        <option value="webinar">Webinar</option>
+        <option value="meetup">Meetup</option>
+    </select>
+    <br><br>
+    <button id="clearPrefs">Clear Preferences</button>
+</body>
+</html>
